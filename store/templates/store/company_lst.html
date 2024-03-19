@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cpm</title>
+</head>
+<body>
+    {% for cpm in companies%}
+    <a href="{% url 'store:company_detail' cpm.id%}">{{cpm.name}}</a><br>
+    {% endfor %}
+</body>
+</html>

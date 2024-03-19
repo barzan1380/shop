@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load store_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+    <div dir="rtl">
+        <a href="{% url 'store:company_list' %}">لیست کمپانی ها</a><br>
+        <h4>دسته بندی:</h4>
+        {% for cty in category %}
+            <a href="{% url 'store:product_list_by_category' cty.slug %}">{{ cty }}</a><br>
+        {% endfor %}
+    </div>
+
+    <h3>جدید ترین محصولات:</h3>
+    {% new_products %}
+    <hr>
+    <h3>پرفروش ترین محصولات</h3>
+    {% best_selling_product %}
+    <hr>
+    <h3>محصولات دارای تخفیف</h3>
+    {% discount_product %}
+</body>
+</html>

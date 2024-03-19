@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  {% for pdt in products %}
+    <a href="{{ pdt.get_absolute_url }}">{{ pdt }}</a><br>
+  {% endfor %}
+</body>
+</html>
